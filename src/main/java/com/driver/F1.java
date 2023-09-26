@@ -3,6 +3,7 @@ package com.driver;
 public class F1 extends Car {
 
     public F1(String name, boolean isManual) {
+        super(name, isManual);
         //Use arbitrary values for parameters which are not mentioned
     }
 
@@ -19,12 +20,42 @@ public class F1 extends Car {
          */
 
         if(newSpeed == 0) {
+            super.setCurrentSpeed(0);
+            super.setCurrentGear(1);
             //Stop the car, set gear as 1
         }
         //for all other cases, change the gear accordingly
 
         if(newSpeed > 0) {
-            changeSpeed(newSpeed, getCurrentDirection());
+            if(newSpeed>1 && newSpeed<50) {
+                setCurrentGear(1);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
+            else if(newSpeed>51 && newSpeed<100) {
+                setCurrentGear(2);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
+            else if(newSpeed>=101 && newSpeed<=150) {
+                setCurrentGear(3);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
+            else if(newSpeed>=151 && newSpeed<=200) {
+                setCurrentGear(4);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
+            else if(newSpeed>=201 && newSpeed<=250) {
+                setCurrentGear(5);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
+            else if(newSpeed>=251) {
+                setCurrentGear(6);
+                changeSpeed(newSpeed, getCurrentDirection());
+            }
         }
     }
+
+//    @Override
+//    public int getCurrentDirection() {
+//        return super.getCurrentDirection();
+//    }
 }
