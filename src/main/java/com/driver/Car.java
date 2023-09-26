@@ -30,18 +30,6 @@ public class Car extends Vehicle {
         this.currentGear = 1;
     }
 
-    public Car(String name, boolean isManual) {
-        super(name);
-        this.wheels = 4;
-        this.type = null;
-        this.doors = 0;
-        this.gears = 0;
-        this.isManual = isManual;
-        this.seats = 0;
-
-        this.currentGear = 1;
-    }
-
 
     public void changeGear(int newGear){
         this.currentGear = newGear;
