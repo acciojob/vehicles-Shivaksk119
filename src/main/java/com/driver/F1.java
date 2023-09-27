@@ -54,8 +54,4 @@ public class F1 extends Car {
         }
     }
 
-//    @Override
-//    public int getCurrentDirection() {
-//        return super.getCurrentDirection();
-//    }
 }
